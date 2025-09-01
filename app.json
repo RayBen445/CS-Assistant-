@@ -1,0 +1,93 @@
+{
+  "name": "CS-Assistant",
+  "description": "Advanced Multi-Device WhatsApp Bot with integrated features",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "multi-device",
+    "cs-assistant"
+  ],
+  "website": "https://github.com/RayBen445/CS-Assistant-",
+  "repository": "https://github.com/RayBen445/CS-Assistant-",
+  "logo": "https://telegra.ph/file/b065f0f673cae5452c358.jpg",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "env": {
+    "SESSION_ID": {
+      "description": "WhatsApp session ID (scan QR code to get this)",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "Name of your bot",
+      "value": "CS-Assistant",
+      "required": false
+    },
+    "PREFIX": {
+      "description": "Bot command prefix",
+      "value": ".",
+      "required": false
+    },
+    "OWNER_NUMBER": {
+      "description": "Bot owner phone number (without +)",
+      "required": true
+    },
+    "OWNER_NAME": {
+      "description": "Bot owner name",
+      "value": "CS-Assistant Team",
+      "required": false
+    },
+    "AUTO_READ_STATUS": {
+      "description": "Automatically read WhatsApp status",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_REACT": {
+      "description": "Automatically react to messages",
+      "value": "false", 
+      "required": false
+    },
+    "ALWAYS_ONLINE": {
+      "description": "Keep bot always online",
+      "value": "false",
+      "required": false
+    },
+    "WELCOME_MESSAGE": {
+      "description": "Send welcome message to new group members",
+      "value": "true",
+      "required": false
+    },
+    "GOODBYE_MESSAGE": {
+      "description": "Send goodbye message when members leave",
+      "value": "true",
+      "required": false
+    },
+    "ANTI_LINK": {
+      "description": "Block group links",
+      "value": "false",
+      "required": false
+    },
+    "TIME_ZONE": {
+      "description": "Bot timezone",
+      "value": "Africa/Johannesburg",
+      "required": false
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL database URL",
+      "required": false
+    }
+  }
+}
